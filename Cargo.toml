@@ -1,10 +1,10 @@
 cargo-features = ["edition2024"]
 [package]
 name = "env"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 license = "MIT"
-description = "std::env::{`set_var`, `remove_var`} safely"
+description = "std::env::{set_var, remove_var} safely"
 keywords = ["environment", "safe"]
 categories = ["config", "os"]
 readme = "README.md"

@@ -8,6 +8,6 @@ Provides a safe interface for <code>[std::env](http://doc.rust-lang.org/std/env)
 
 Since [#124636](https://github.com/rust-lang/rust/pull/124636), `std::env::set_var` and `std::env::remove_var}` have become unsafe, due to their being unsafe when in a multi-threaded unix context[^1].
 
-This crate wraps these functions, checking if these conditions are met at runtime, such that these functions are safe to call.
+This crate wraps these functions, adding runtime checks to ensure thread safety on unix systems, making them safe again.
 
 [^1]: https://github.com/rust-lang/rust/issues/27970

@@ -43,6 +43,7 @@ const SAFE: bool = matches!(
 /// ```
 #[must_use = "this function may not always run"]
 pub fn set_var<K: AsRef<OsStr>, V: AsRef<OsStr>>(key: K, value: V) -> Option<()> {
+    // SAFETY: this function is safe to call in single threaded environments or on good OS's.
     (SAFE || num_threads::is_single_threaded() == Some(true))
         .then(|| unsafe { std::env::set_var(key, value) })
 }
